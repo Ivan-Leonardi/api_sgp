@@ -1,3 +1,5 @@
+//Criação da tabale developers, aqui utilizei o Knex pora criar a tabela
+
 export const up = knex => knex.schema.createTable("developers", table => {
     table.increments("id");
     table.text("name").notNullable();         

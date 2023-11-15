@@ -1,3 +1,5 @@
+//Consiguração para trabalhar com imagens usando a biblioteca Multer
+
 import path from "path";
 import multer from "multer";
 import crypto from "crypto";

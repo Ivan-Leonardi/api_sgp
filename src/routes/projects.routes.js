@@ -14,5 +14,6 @@ projectsRoutes.post("/", projectsController.create);
 projectsRoutes.get("/", projectsController.index);
 projectsRoutes.get("/:id", projectsController.show);
 projectsRoutes.delete("/:id", projectsController.delete);
+projectsRoutes.put("/:id/updatestatus", projectsController.update);
 
 export default projectsRoutes;

@@ -1,3 +1,5 @@
+//Definindo o caminho onde as imagens serão salvas
+
 import path from "path";
 import fs from "fs";
 import uploadConfig from "../configs/upload.js";

@@ -1,3 +1,5 @@
+//Criação da tabela de usuários, caso ela não exista, usando Javascript
+
 const createUsers = `
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

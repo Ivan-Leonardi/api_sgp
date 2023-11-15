@@ -1,9 +1,12 @@
+//Criação da configuração do arquivo inicial e do servidor com Express, do projeto backend 
+
 import "express-async-errors";
+import "dotenv/config";
 import MigrationRunner from "./database/sqlite/migrations/index.js";
 import AppError from "./utils/AppError.js";
 import express from "express";
 import uploadConfig from "./configs/upload.js";
-
+import cors from "cors";
 import routes from "./routes/index.js";
 
 const migrationRun = new MigrationRunner();
@@ -11,6 +14,8 @@ const migrationRun = new MigrationRunner();
 migrationRun.run();
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -34,7 +39,7 @@ app.use((error, req, res, next) => {
     });
 });
 
-const PORT = 3333;
+const PORT = process.env.PORT || 3333;
 
 app.listen(PORT, () => {
     console.log(`Server is running on Port ${PORT} 🚀`);

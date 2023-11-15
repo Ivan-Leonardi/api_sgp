@@ -1,3 +1,5 @@
+//Criação da tabale projects, aqui utilizei o Knex pora criar a tabela
+
 export const up = knex => knex.schema.createTable("projects", table => {
     table.increments("id");
     table.text("title");    

@@ -4,7 +4,9 @@ class DevelopersController {
     async index(req, res) {
         const user_id = req.user.id;
 
-        const developers = await knex("developers").where({ user_id });
+        const developers = await knex("developers")
+        .where({ user_id })
+        .groupBy("name")
 
         return res.json(developers);
     }

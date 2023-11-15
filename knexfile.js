@@ -1,3 +1,5 @@
+//Configurando o knex e definindo o SQlite como bando de dados
+
 import path from "path";
 import { fileURLToPath } from "url";
 
