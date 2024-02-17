@@ -1,4 +1,4 @@
-//Aqui uso a bibliote PM2 para que ela fique observando o servidor para mante-lo sempre rodando.
+//Aqui uso a biblioteca PM2 para que ela fique observando o servidor para mante-lo sempre rodando.
 
 module.exports = {
   apps: [
