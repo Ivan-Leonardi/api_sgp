@@ -15,7 +15,7 @@ migrationRun.run();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: 'https://sgpdev.vercel.app' }));
 
 app.use(express.json());
 
