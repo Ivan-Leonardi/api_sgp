@@ -15,7 +15,7 @@ migrationRun.run();
 
 const app = express();
 
-app.use(cors({ origin: 'https://sgpdev.vercel.app' }));
+app.use(cors({origin: "https://api-sgp-usf.onrender.com"}));
 
 app.use(express.json());
 
@@ -24,12 +24,6 @@ app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER));
 app.use(routes);
 
 app.use((error, req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://sgpdev.vercel.app');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-
-    next();
-
     if (error instanceof AppError) {
         return res.status(error.statusCode).json({
             status: "error",
