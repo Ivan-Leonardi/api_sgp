@@ -15,7 +15,7 @@ migrationRun.run();
 
 const app = express();
 
-app.use(cors({origin: "https://api-sgp-usf.onrender.com"}));
+app.use(cors());
 
 app.use(express.json());
 
