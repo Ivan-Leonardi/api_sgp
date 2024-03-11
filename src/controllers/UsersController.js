@@ -1,7 +1,6 @@
 import bcrypt from "bcryptjs";
 import AppError from "../utils/AppError.js";
 import sqliteConnection from "../database/sqlite/index.js";
-
 class UserController {
     async create(req, res) {
         const { name, email, password } = req.body;

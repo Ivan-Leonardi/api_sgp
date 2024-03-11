@@ -1,4 +1,4 @@
-// Realiazando a conexão com SQlite
+//Realiazando a conexão com SQlite
 
 import sqlite3 from "sqlite3";
 import * as sqlite from "sqlite";
