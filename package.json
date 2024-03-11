@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2-runtime start ecosystem.config.cjs --env production",
+    "test": "echo \"Error: no test specified\" && exit 1",    
     "dev": "nodemon ./src/server.js",
-    "migrate": "knex migrate:latest"
+    "migrate": "knex migrate:latest",
+    "start": "npm run migrate && pm2-runtime start ecosystem.config.cjs --env production"
   },
   "author": "",
   "license": "ISC",
