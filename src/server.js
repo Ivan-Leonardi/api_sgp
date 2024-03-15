@@ -8,12 +8,11 @@ import express from "express";
 import uploadConfig from "./configs/upload.js";
 import cors from "cors";
 import routes from "./routes/index.js";
-import Migrate from "./database/knex/migrate.js";
 
 const migrationRun = new MigrationRunner();
 
 migrationRun.run();
-Migrate().then(console.log("migrate init"))
+
 
 const app = express();
 
