@@ -2,17 +2,11 @@
 
 import "express-async-errors";
 import "dotenv/config";
-import MigrationRunner from "./database/sqlite/migrations/index.js";
 import AppError from "./utils/AppError.js";
 import express from "express";
 import uploadConfig from "./configs/upload.js";
 import cors from "cors";
 import routes from "./routes/index.js";
-
-const migrationRun = new MigrationRunner();
-
-migrationRun.run();
-
 
 const app = express();
 

@@ -1,5 +1,6 @@
 import knex from "../database/knex/index.js";
 import AppError from "../utils/AppError.js";
+import connection from "../database/knex/index.js";
 
 class ProjectsController {
     async create(req, res) {

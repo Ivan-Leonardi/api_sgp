@@ -1,5 +1,5 @@
 //Configurando o knex e definindo o SQlite como bando de dados
-
+import "dotenv/config";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -11,16 +11,12 @@ const knexConfig = {
   development: {
     client: 'mysql2',
     connection: {
-      host: process.env.DATABASE_HOST,
-      port: process.env.DATABASE_PORT,
-      database: process.env.DATABASE_NAME,
-      user: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASSWORD,
-      waitForConnections: true,
-    },
-    pool: {
-      afterCreate: (conn, cb) => conn.run("PRAGMA foreign_keys = ON", cb)
-    },
+      host: process.env.MYSQL_ADDON_HOST,
+      port: parseInt(process.env.MYSQL_ADDON_PORT),
+      database: process.env.MYSQL_ADDON_DB,
+      user: process.env.MYSQL_ADDON_USER,
+      password: process.env.MYSQL_ADDON_PASSWORD,      
+    },    
     migrations: {
       directory: path.resolve(__dirname, "src", "database", "knex", "migrations")
     },
