@@ -7,6 +7,7 @@ import express from "express";
 import uploadConfig from "./configs/upload.js";
 import cors from "cors";
 import routes from "./routes/index.js";
+import connection from "./database/knex/index.js";
 
 const app = express();
 
@@ -17,6 +18,8 @@ app.use(express.json());
 app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER));
 
 app.use(routes);
+
+connection.queryBuilder();
 
 app.use((error, req, res, next) => {
   if (error instanceof AppError) {
