@@ -7,8 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./src/server.js",
-    "start": "pm2-runtime start ecosystem.config.cjs --env production",
-    "migrate": "knex migrate:latest"
+    "start": "knex migrate:latest pm2-runtime start ecosystem.config.cjs --env production ",
+    "migrate": "knex migrate:latest",
+    "vercel-build": "knex migrate:latest pm2-runtime start ecosystem.config.cjs --env production"   
   },
   "author": "",
   "license": "ISC",
