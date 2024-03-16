@@ -1,11 +1,11 @@
 //Configurando o knex e definindo o SQlite como bando de dados
 import "dotenv/config";
+
 import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 
 const knexConfig = {
   development: {
