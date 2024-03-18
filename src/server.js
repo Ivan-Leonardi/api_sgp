@@ -11,35 +11,12 @@ import connection from "./database/knex/index.js";
 
 const app = express();
 
-app.use((req, res, next) => {
-  // Qualquer endereço pode fazer requisição
-  res.header("Access-Control-Allow-Origin", "https://sgpdev.vercel.app");
-
-  // Tipo de métodos que a API aceita
-  res.header("Access-Control-Allow-Methods", "GET, PUT, PATCH, POST, DELETE");
-
-  // Permitir o envio de dados para a API
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-
-  res.header('Access-Control-Allow-Credentials', true);
-
-  //Executar o cors
-  app.use(cors());
-
-  // Quando não houver erro deve continuar o processamento
-  next();
-});
-
-// app.use(cors({
-//   origin: [
-//     "https://sgpdev.vercel.app/",
-//     "https://sgpdev.vercel.app/register",
-//     "https://sgpdev.vercel.app/users",
-//     "https://sgpdev.vercel.app/projects",
-//     "https://sgpdev.vercel.app/sessions",
-//     "https://sgpdev.vercel.app/developers"
-//   ]
-// }));
+app.use(cors({
+  origin: "https://sgpdev.vercel.app",
+  methods: "GET, PUT, PATCH, POST, DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+  credentials: true
+}));
 
 app.use(express.json());
 
