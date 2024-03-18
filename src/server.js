@@ -11,7 +11,9 @@ import connection from "./database/knex/index.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://sgpdev.vercel.app/"
+}));
 
 app.use(express.json());
 
